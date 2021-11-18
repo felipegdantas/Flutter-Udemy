@@ -1,7 +1,7 @@
-import 'chart_bar.dart';
-import '../models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import '../models/transaction.dart';
+import 'chart_bar.dart';
 
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
@@ -19,7 +19,7 @@ class Chart extends StatelessWidget {
       for (var i = 0; i < recentTransaction.length; i++) {
         bool sameDay = recentTransaction[i].date.day == weekDay.day;
         bool sameMonth = recentTransaction[i].date.month == weekDay.month;
-        bool sameYear = recentTransaction[i].date.day == weekDay.year;
+        bool sameYear = recentTransaction[i].date.year == weekDay.year;
 
         if (sameDay && sameMonth && sameYear) {
           totalSum += recentTransaction[i].value;
